@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 // Import the generated ABI after hardhat compile
-import ServiceRequestArtifact from "../artifacts/contracts/ServiceRequest.sol/ServiceRequestSystem.json" with { type: "json" };
+import NeroServiceRequestArtifact from "../artifacts/contracts/NeroServiceRequest.sol/NeroServiceRequestSystem.json" with { type: "json" };
 
 // Replace with your deployed contract address on Nero Chain testnet
 export const CONTRACT_ADDRESS = "0x8d2695a6a0f8cf928f76E0407C166ea6aeA691C0"; 
@@ -23,9 +23,9 @@ const getContract = async (withSigner = false) => {
 
     if (withSigner) {
         if (!signer) signer = await provider.getSigner();
-        return new ethers.Contract(CONTRACT_ADDRESS, ServiceRequestArtifact.abi, signer);
+        return new ethers.Contract(CONTRACT_ADDRESS, NeroServiceRequestArtifact.abi, signer);
     } else {
-        return new ethers.Contract(CONTRACT_ADDRESS, ServiceRequestArtifact.abi, provider);
+        return new ethers.Contract(CONTRACT_ADDRESS, NeroServiceRequestArtifact.abi, provider);
     }
 };
 

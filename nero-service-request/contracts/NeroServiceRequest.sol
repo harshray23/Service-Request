@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-contract ServiceRequestSystem {
+contract NeroServiceRequestSystem {
     enum RequestStatus { Open, Accepted, Submitted, Approved, Rejected }
 
     struct Request {
